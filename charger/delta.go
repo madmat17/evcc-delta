@@ -86,9 +86,9 @@ func NewDelta(uri, device, comset string, baudrate int, proto modbus.Protocol, s
 		return nil, err
 	}
 
-	if !sponsor.IsAuthorized() {
-		return nil, api.ErrSponsorRequired
-	}
+#	if !sponsor.IsAuthorized() {
+#		return nil, api.ErrSponsorRequired
+#	}
 
 	log := util.NewLogger("delta")
 	conn.Logger(log.TRACE)
